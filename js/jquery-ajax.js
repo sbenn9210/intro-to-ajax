@@ -117,6 +117,24 @@
 
   // TODO: your code goes here :)
 
+  $('#selectBreedContainer').append("<select id='list'></select>")
+
+  $(document).ready(function() {
+    $.get('https://dog.ceo/api/breeds/list', function (data) {
+      data.message.forEach(item => {
+        $('#list').append(`<option value=${item}>${item}</option>`)
+      })
+    })
+  })
+
+  $('#selectBreedContainer').append("<div id='doggy'><div>")
+
+  $('#list').on('change', function (event) {
+     $.get(`https://dog.ceo/api/breed/${event.target.value}/images/random`, function (data) {
+      $('#doggy').html(`<img src=${data.message}>`)      
+     })
+  })
+
   //
   // Excellent work!
   //
