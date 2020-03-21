@@ -33,6 +33,15 @@
     $('#loadBtn2').remove()
   }
 
+  $('#generateDoggoBtn').click(doggoClick)
+
+  function doggoClick () {
+    $('#generateDoggoBtn').html('Generating Doggo...').prop('disabled', true)
+    $.getJSON('https://dog.ceo/api/breeds/image/random', function(data) {
+      $('#doggoContainer').html(`<img src=${data.message}>`)
+      $('#generateDoggoBtn').html('Generate Doggo').prop('disabled', false)
+    })
+  }
   //
   // Pretty simple, right?
   //
