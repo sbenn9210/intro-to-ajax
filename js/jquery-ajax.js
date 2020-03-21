@@ -132,8 +132,6 @@
   $('#list').on('change', function (event) {
      $.get(`https://dog.ceo/api/breed/${event.target.value}/images/random`, function (data) {
       $('#doggy').html(`<img src=${data.message}>`)      
-
-
      })
     
   })
