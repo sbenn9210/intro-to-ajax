@@ -96,7 +96,7 @@ const catBtn = document.getElementById('generateCatBtn')
 const catContainer = document.getElementById('catContainer')
 let catImg = null
 var headers = new Headers({
-  'x-api-key' : '392b2623-ec02-49db-a483-b3955c3eb61f'
+  'x-api-key' : ''
 })
 
 catBtn.addEventListener('click', clickCatBtn) 
@@ -127,7 +127,7 @@ function clickCatBtn () {
   // TODO: your code goes here :)
 
   var wikiHeaders = {
-    'User-Agent' : 'sbenn9210@gmail.com'
+    'User-Agent' : ''
   }
 
   catBtn.addEventListener('click', function () {
