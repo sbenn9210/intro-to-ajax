@@ -126,6 +126,17 @@ function clickCatBtn () {
 
   // TODO: your code goes here :)
 
+  var wikiHeaders = {
+    'User-Agent' : 'sbenn9210@gmail.com'
+  }
+
+  catBtn.addEventListener('click', function () {
+    fetch('https://en.wikipedia.org/api/rest_v1/feed/featured/2020/03/23', wikiHeaders).then(response => {
+      return response.json()
+    }).then(data => {
+      console.log(data.onthisday)
+    })
+  })
   //
   // Be sure to check out the axios project for another example of a Promise-based
   // AJAX library: https://github.com/axios/axios
